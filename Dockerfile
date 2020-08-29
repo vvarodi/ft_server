@@ -6,7 +6,7 @@
 #    By: vvarodi <vvarodi@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/27 22:17:54 by vvarodi           #+#    #+#              #
-#    Updated: 2020/08/28 13:29:21 by vvarodi          ###   ########.fr        #
+#    Updated: 2020/08/29 17:29:30 by vvarodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install -y \
 
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+
 # ./sites-available/* Extra virtual host configuration files
 # ./sites-enabled/* Symlink to sites-available/<file> to enable vhost
 
@@ -52,10 +53,12 @@ RUN		rm -rf /etc/nginx/sites-enabled/default
 # Giving nginx's user-group rights over page files
 RUN	chown -R www-data:www-data /var/www/html/*
 COPY srcs/index.html /var/www/html/
+COPY srcs/index.php /var/www/html/
 
+COPY srcs/start.sh .
 
 EXPOSE 80 443
 
-ENTRYPOINT service nginx start 
+CMD bash start.sh
 
 # http://localhost:8080

@@ -27,7 +27,9 @@ f performance_schema f
 ```
 ### Step 4: phpMyAdmin installed to handle the administration of MySQL over the Web.
 ![phpMyAdmin](img/phpMyAdminIndex.png)
-
+Checking connection between MySQL and phpMyAdmin: Testing Database Connection from PHP 
+![phpMyAdmin1](img/connectionMySQLphpMyAdmin.png)
+![phpMyAdmin2](img/connectionMySQLphpMyAdmin2.png)
 ## Handle errors:
 
 If your page is not loading or throwing an error. Inspect:

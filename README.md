@@ -2,24 +2,18 @@
 
 ## Guide
 
-### Step 1: **Nginx** installed to serve your content.
+### Step 1: Nginx installed to serve your content.
 ![Succesfully-installed-nginx](img/nginx.png)
-### Step 2: Installed **PHP** for Processing && Configuring Nginx to Use the PHP Processor
+ ```
+ /etc/nginx/sites-available/* Extra virtual host configuration files
+ /etc/nginx/sites-enabled/* Symlink to sites-available/<file> to enable vhost
+ ```
+### Step 2: Installed PHP for Processing && Configuring Nginx to Use the PHP Processor
 ![php-info](img/php-info.png)
 ![php-working](img/php.png)
-### Step 3: **MySQL** installed to store and manage your data. 
-
-[Installation](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10#step-2-%E2%80%94-installing-mariadb)
-```
-mariadb
-MariaDB i(none)|> CREATE DATABASE example_databse;
-MariaDB i(none)|> GRANT ALL PRIVILEGES ON example_database.* TO 'example_user'¾'localhost';
-MariaDB i(none)|> FLUSH PRIVILEGES;
-MariaDB i(none)|> exit
-mariadb -u root -p
->Enter password: 
-MariaDB i(none)|> SHOW DATABASES;
-```
+### Step 3: MySQL installed to store and manage your data. 
+MariaDB (database system) installed to store and manage data for your site, some Linux distributions (including Debian) use MariaDB as a drop-in replacement for MySQL
+[Installation](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10#step-2-%E2%80%94-installing-mariadb) --> [testing](img/mariadb.png)
 ```
 +--------------------+
 f Database           f
@@ -31,6 +25,8 @@ f performance_schema f
 +--------------------+
 4 rows in set (0.000 sec)
 ```
+### Step 4: phpMyAdmin installed to handle the administration of MySQL over the Web.
+![phpMyAdmin](img/phpMyAdminIndex.png)
 
 ## Handle errors:
 
@@ -65,3 +61,8 @@ service --status-all
   * [Default nginx configuration](img/default)
   * [Nginx 502 Bad Gateway Error](https://ibcomputing.com/nginx-502-bad-gateway-error/)
   * [Autoindex-error](https://serverfault.com/questions/940276/force-nginx-to-always-autoindex-and-ignore-index-html-files)
+* **mariadb** (database system) installed to store and manage data for your site
+  * [mysql_secure_installation](https://mariadb.com/kb/en/mysql_secure_installation/) a shell script available on Unix systems, and enables you to improve the security of your MariaDB installation
+* **phpMyAdmin** phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web.
+  * [phpMyAdmin Documentation](https://docs.phpmyadmin.net/en/latest/)
+  * [phpMyAdmin Configuration](https://docs.phpmyadmin.net/en/latest/config.html#)

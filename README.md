@@ -8,12 +8,14 @@
  /etc/nginx/sites-available/* Extra virtual host configuration files
  /etc/nginx/sites-enabled/* Symlink to sites-available/<file> to enable vhost
  ```
+![SimpleHello](img/indexhtml.png)
+
 ### Step 2: Installed PHP for Processing && Configuring Nginx to Use the PHP Processor
 ![php-info](img/php-info.png)
 ![php-working](img/php.png)
 ### Step 3: MySQL installed to store and manage your data. 
 MariaDB (database system) installed to store and manage data for your site, some Linux distributions (including Debian) use MariaDB as a drop-in replacement for MySQL
-[Installation](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10#step-2-%E2%80%94-installing-mariadb) --> [testing](img/mariadb.png)
+[Installation](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10#step-2-%E2%80%94-installing-mariadb) --> [code](img/mariadb.png)
 ```
 +--------------------+
 f Database           f
@@ -27,9 +29,21 @@ f performance_schema f
 ```
 ### Step 4: phpMyAdmin installed to handle the administration of MySQL over the Web.
 ![phpMyAdmin](img/phpMyAdminIndex.png)
-Checking connection between MySQL and phpMyAdmin: Testing Database Connection from PHP 
+
+Checking connection between MySQL and phpMyAdmin: Testing Database Connection from PHP [code](img/display_db_table.php)
+
 ![phpMyAdmin1](img/connectionMySQLphpMyAdmin.png)
+
 ![phpMyAdmin2](img/connectionMySQLphpMyAdmin2.png)
+
+### Step 5: WordPress
+![WordPressWelcome](img/wordpress_welcome.png)
+
+![WordPressBlog](img/wordpress_blog.png)
+
+Checking connection between MySQL/phpMyAdmin with WordPress: wordpress database
+
+![WordPressDataBase](img/wordpress_database.png)
 ## Handle errors:
 
 If your page is not loading or throwing an error. Inspect:

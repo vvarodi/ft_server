@@ -73,12 +73,17 @@ service --status-all
 * **Debian**
   * [About Debian](https://www.debian.org/intro/about)
   * [Debian Directory Structure](https://wiki.debian.org/Nginx/DirectoryStructure)
+  * [wget](https://www.gnu.org/software/wget/) use it to retrieve content and files from various web servers
 * **Nginx**
   * [Default nginx configuration](img/default)
   * [Nginx 502 Bad Gateway Error](https://ibcomputing.com/nginx-502-bad-gateway-error/)
   * [Autoindex-error](https://serverfault.com/questions/940276/force-nginx-to-always-autoindex-and-ignore-index-html-files)
+  * [autoindex off error 403](https://stackoverflow.com/questions/10663248/how-to-configure-nginx-to-enable-kinda-file-browser-mode)
 * **mariadb** (database system) installed to store and manage data for your site
   * [mysql_secure_installation](https://mariadb.com/kb/en/mysql_secure_installation/) a shell script available on Unix systems, and enables you to improve the security of your MariaDB installation
 * **phpMyAdmin** phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web.
   * [phpMyAdmin Documentation](https://docs.phpmyadmin.net/en/latest/)
   * [phpMyAdmin Configuration](https://docs.phpmyadmin.net/en/latest/config.html#)
+* **WordPress**
+  * [wp-config.php](https://wordpress.org/support/article/editing-wp-config-php/)
+  * [How to install](https://wordpress.org/support/article/how-to-install-wordpress/)

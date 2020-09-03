@@ -44,6 +44,18 @@ Checking connection between MySQL and phpMyAdmin: Testing Database Connection fr
 Checking connection between MySQL/phpMyAdmin with WordPress: wordpress database
 
 ![WordPressDataBase](img/wordpress_database.png)
+
+## Autoindex
+[Autoindex](https://stackoverflow.com/questions/10663248/how-to-configure-nginx-to-enable-kinda-file-browser-mode)
+"Without autoindex option you should be getting Error 403 for requests that end with / on directories that do not have an index.html file. With autoindex on you should be getting a simple listing"
+
+**Autoindex ON**
+![ON](img/autoindex_on.png)
+**Autoindex OFF**
+``` 
+docker build -t ft_server . --build-arg autoindex=off
+```
+![OFF](img/autoindex_off.png)
 ## Handle errors:
 
 If your page is not loading or throwing an error. Inspect:
@@ -64,6 +76,7 @@ service --status-all
   * [Get started with Docker](https://docs.docker.com/get-started/)
   * [Docker curriculum](https://docker-curriculum.com/)
   * [The Docker Handbook](https://www.freecodecamp.org/news/the-docker-handbook/)
+  * [ARG-ENV](https://vsupalov.com/docker-arg-env-variable-guide/) Build-time configuration with ARG && Run-time Environment Replacement using ENV
 * **Dockerfile:** a text file that contains all commands, in order, needed to build a given image.
   * [Dockerfile-best-practice](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
   * [Dockerfile-reference](https://docs.docker.com/engine/reference/builder/)
@@ -87,3 +100,6 @@ service --status-all
 * **WordPress**
   * [wp-config.php](https://wordpress.org/support/article/editing-wp-config-php/)
   * [How to install](https://wordpress.org/support/article/how-to-install-wordpress/)
+* **SSL**
+  * [mkcert](https://github.com/FiloSottile/mkcert/)
+  * openssl

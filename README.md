@@ -45,8 +45,15 @@ Checking connection between MySQL/phpMyAdmin with WordPress: wordpress database
 
 ![WordPressDataBase](img/wordpress_database.png)
 
+Exporting database and Connecting my database to wordpress. This way I see the page when going to http://localhost/wordpress and not wordpress config
+
+http://localhost/wordpress/wp-admin to modify
+
+![Hola_mundo](img/Hola_mundo.png)
+
 ## Autoindex
-[Autoindex](https://stackoverflow.com/questions/10663248/how-to-configure-nginx-to-enable-kinda-file-browser-mode)
+  * [Autoindex-error](https://serverfault.com/questions/940276/force-nginx-to-always-autoindex-and-ignore-index-html-files)
+  * [autoindex off-error 403](https://stackoverflow.com/questions/10663248/how-to-configure-nginx-to-enable-kinda-file-browser-mode)
 "Without autoindex option you should be getting Error 403 for requests that end with / on directories that do not have an index.html file. With autoindex on you should be getting a simple listing"
 
 **Autoindex ON**
@@ -71,35 +78,45 @@ service --status-all
 
 ![services](img/services.png)
 
-## Resources:
+## Resources/Research:
 * **Docker**
   * [Get started with Docker](https://docs.docker.com/get-started/)
   * [Docker curriculum](https://docker-curriculum.com/)
   * [The Docker Handbook](https://www.freecodecamp.org/news/the-docker-handbook/)
-  * [ARG-ENV](https://vsupalov.com/docker-arg-env-variable-guide/) Build-time configuration with ARG && Run-time Environment Replacement using ENV
+
 * **Dockerfile:** a text file that contains all commands, in order, needed to build a given image.
   * [Dockerfile-best-practice](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
   * [Dockerfile-reference](https://docs.docker.com/engine/reference/builder/)
+  * [ARG-ENV](https://vsupalov.com/docker-arg-env-variable-guide/) Build-time configuration with ARG && Run-time Environment Replacement using ENV 
+
 * **Web Server:** a web server stores and delivers the content for a website – such as text, images, video, and application data – to clients that request it.
   * [How To Install Linux, Nginx, MariaDB, PHP (LEMP stack) on Debian 10](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10)
    LEMP stack means: Linux, Nginx, MySQL, PHP.
+
 * **Debian**
   * [About Debian](https://www.debian.org/intro/about)
   * [Debian Directory Structure](https://wiki.debian.org/Nginx/DirectoryStructure)
   * [wget](https://www.gnu.org/software/wget/) use it to retrieve content and files from various web servers
+  * [How to Use sed to Find and Replace String in Files](https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/) (autoindex on/off)
+
 * **Nginx**
   * [Default nginx configuration](img/default)
   * [Nginx 502 Bad Gateway Error](https://ibcomputing.com/nginx-502-bad-gateway-error/)
-  * [Autoindex-error](https://serverfault.com/questions/940276/force-nginx-to-always-autoindex-and-ignore-index-html-files)
-  * [autoindex off error 403](https://stackoverflow.com/questions/10663248/how-to-configure-nginx-to-enable-kinda-file-browser-mode)
+
 * **mariadb** (database system) installed to store and manage data for your site
   * [mysql_secure_installation](https://mariadb.com/kb/en/mysql_secure_installation/) a shell script available on Unix systems, and enables you to improve the security of your MariaDB installation
+
 * **phpMyAdmin** phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web.
   * [phpMyAdmin Documentation](https://docs.phpmyadmin.net/en/latest/)
   * [phpMyAdmin Configuration](https://docs.phpmyadmin.net/en/latest/config.html#)
-* **WordPress**
-  * [wp-config.php](https://wordpress.org/support/article/editing-wp-config-php/)
+
+* **WordPress**  
   * [How to install](https://wordpress.org/support/article/how-to-install-wordpress/)
+  * [wp-config.php](https://wordpress.org/support/article/editing-wp-config-php/)
+
 * **SSL**
+  * [Types of ssl certificates](https://phoenixnap.com/kb/types-of-ssl-certificates)
   * [mkcert](https://github.com/FiloSottile/mkcert/)
-  * openssl
+  * [Creating a Self-Signed SSL Certificate](https://linuxize.com/post/creating-a-self-signed-ssl-certificate/)
+  * [openssl tutorial](https://phoenixnap.com/kb/openssl-tutorial-ssl-certificates-private-keys-csrs)
+  * [HTTPS for localhost](https://www.freecodecamp.org/news/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec/)

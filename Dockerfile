@@ -6,7 +6,7 @@
 #    By: vvarodi <vvarodi@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/27 22:17:54 by vvarodi           #+#    #+#              #
-#    Updated: 2020/09/04 17:55:44 by vvarodi          ###   ########.fr        #
+#    Updated: 2020/09/05 01:56:14 by vvarodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,14 +58,7 @@ RUN mkdir ~/mkcert && cd ~/mkcert && \
 # Giving nginx's user-group rights over page files
 RUN	chown -R www-data:www-data /var/www/html/*
 
-#DATABASE
-COPY srcs/wordpress.sql ./root/
-RUN service mysql start && \
-echo "CREATE DATABASE wordpress;" | mysql -u root && \
-echo "GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost';" | mysql -u root && \
-echo "update mysql.user set plugin = 'mysql_native_password' where user='root';" | mysql -u root  && \
-mysql wordpress -u root --password=  < ./root/wordpress.sql 
-
+COPY srcs/change_index.sh .
 COPY srcs/start.sh .
 COPY srcs/main.php /var/www/html/
 COPY srcs/index.html /var/www/html/

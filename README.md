@@ -49,6 +49,8 @@ Exporting database and Connecting my database to wordpress. This way I see the p
 
 http://localhost/wordpress/wp-admin to modify
 
+(Not at final version) Commit -> [code](https://github.com/vvarodi/ft_server/tree/81676fb35a22d645eb20199602fa9ab329d86670)
+
 ![Hola_mundo](img/Hola_mundo.png)
 
 ## Autoindex
@@ -63,6 +65,10 @@ http://localhost/wordpress/wp-admin to modify
 docker build -t ft_server . --build-arg autoindex=off
 ```
 ![OFF](img/autoindex_off.png)
+
+Verifying if the server is running with an autoindex which can be desactivated when the container is launched (via an environment variable)
+![change_autoindex](img/change_autoindex.png)
+
 ## Handle errors:
 
 If your page is not loading or throwing an error. Inspect:
@@ -90,6 +96,7 @@ service --status-all
   * [ARG-ENV](https://vsupalov.com/docker-arg-env-variable-guide/) Build-time configuration with ARG && Run-time Environment Replacement using ENV 
 
 * **Web Server:** a web server stores and delivers the content for a website – such as text, images, video, and application data – to clients that request it.
+  * [What is a web server?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server#:~:text=A%20static%20web%20server%2C%20or,application%20server%20and%20a%20database.)
   * [How To Install Linux, Nginx, MariaDB, PHP (LEMP stack) on Debian 10](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10)
    LEMP stack means: Linux, Nginx, MySQL, PHP.
 

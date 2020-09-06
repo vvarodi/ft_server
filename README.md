@@ -14,7 +14,7 @@
     * [Shell acces to the container](#shell-acces-to-the-container) 🐳
     * [Autoindex on/off](#autoindex-on/off) 📂
 3. [Guide: What I did step by step](#Guide) ✔️
-    * [Wiki]()
+    * [Wiki](https://github.com/vvarodi/ft_server/wiki)
 4. [How it looks](#how-it-looks) 💻 
 4. [Resources/Research](#resources/research) 🔍
 
@@ -109,137 +109,8 @@ sh autoindex_off.sh
 ```
 -----------------------
 # Guide: What I did step by step
-## Docker basics command
-```
-# Build a docker image from a Dockerfile
-docker build -t <your image name> <your Dockerfile dir>
 
-# Start an instance of a docker image
-docker run -it <your image name>
-
-# Really important if you want to bind some ports on the container to your own computer, use -p option.
-# Example for an Apache image first 80 means is local port, second 80 means container port
-docker run -it debian:apache -p 80:80
-
-# Enter running container
-docker exec -it <ID or container name> bash
-
-# See all images
-docker images
-
-# Remove images
-docker rmi <image>
-# docker rmi $(docker images -aq)
-
-# Remove a container
-$ docker rm <ID or container name>
-
-# See running containers
-docker ps
-# List all docker containers (running and stopped).
-docker ps -a
-
-# Stop a container
-docker kill <ID or container name>
-
-# Delete all unused Docker images and cache and free space
-docker system prune
-```
-
-## Guide
-
-### Step 1: Nginx installed to serve your content.
-![Succesfully-installed-nginx](img/nginx.png)
- ```
- /etc/nginx/sites-available/* Extra virtual host configuration files
- /etc/nginx/sites-enabled/* Symlink to sites-available/<file> to enable vhost
- ```
-![SimpleHello](img/indexhtml.png)
-
-### Step 2: Installed PHP for Processing && Configuring Nginx to Use the PHP Processor
-![php-info](img/php-info.png)
-
-![php-working](img/php.png)
-### Step 3: MySQL installed to store and manage your data. 
-MariaDB (database system) installed to store and manage data for your site, some Linux distributions (including Debian) use MariaDB as a drop-in replacement for MySQL
-[Installation](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10#step-2-%E2%80%94-installing-mariadb) --> [code](img/mariadb.png)
-```
-+--------------------+
-f Database           f
-+--------------------+
-f information_schema f
-f mysql              f
-f new_database       f
-f performance_schema f
-+--------------------+
-4 rows in set (0.000 sec)
-```
-### Step 4: phpMyAdmin installed to handle the administration of MySQL over the Web.
-![phpMyAdmin](img/phpMyAdminIndex.png)
-
-Checking connection between MySQL and phpMyAdmin: Testing Database Connection from PHP [code](img/display_db_table.php)
-
-![phpMyAdmin1](img/connectionMySQLphpMyAdmin.png)
-
-![phpMyAdmin2](img/connectionMySQLphpMyAdmin2.png)
-
-### Step 5: WordPress. Installation and Connection to wordpress database
-![WordPressWelcome](img/wordpress_welcome.png)
-
-![WordPressBlog](img/wordpress_blog.png)
-
-Checking connection between MySQL/phpMyAdmin with WordPress: wordpress database
-
-![WordPressDataBase](img/wordpress_database.png)
-
-Exporting database and Connecting my database to wordpress. This way I see the page when going to ```http://localhost/wordpress``` and not wordpress config
-
-```http://localhost/wordpress/wp-admin``` to modify
-
-(Not at final version) [Commit](https://github.com/vvarodi/ft_server/tree/81676fb35a22d645eb20199602fa9ab329d86670)
-
-![Hola_mundo](img/Hola_mundo.png)
-
-## Autoindex
-  * [Autoindex-error](https://serverfault.com/questions/940276/force-nginx-to-always-autoindex-and-ignore-index-html-files)
-  * [autoindex off-error 403](https://stackoverflow.com/questions/10663248/how-to-configure-nginx-to-enable-kinda-file-browser-mode)
-"Without autoindex option you should be getting Error 403 for requests that end with / on directories that do not have an index.html file. With autoindex on you should be getting a simple listing"
-
-**Autoindex ON**
-
-![ON](img/autoindex_on.png)
-
-**Autoindex OFF**
-
-By ARG: [Commit](https://github.com/vvarodi/ft_server/tree/756d9cecf110508a6938c650a2d0ded56b7be09c)
-``` 
-docker build -t ft_server . --build-arg autoindex=off
-```
-By ENV: 
-```
-docker run --env AUTOINDEX=off --name ft_server -d -p 443:443 -p 80:80 ft_server
-```
-![OFF](img/autoindex_off.png)
-```server_tokens off;``` Config to not show nginx version
-![OFF2](img/autoindex_off_noversion.png)
-Verifying if the server is running with an autoindex which can be desactivated when the container is launched (via an environment variable)
-
-![change_autoindex](img/change_autoindex.png)
-
-## Handle errors:
-
-If your page is not loading or throwing an error. Inspect:
-``` 
-cat /var/log/nginx/access.log
-cat /var/log/nginx/error.log
-```
-To see all running services:
-
-```
-service --status-all 
-```
-
-![services](img/services.png)
+> [Wiki](https://github.com/vvarodi/ft_server/wiki)
 
 # How it looks 👀
 ``` http://localhost/ ```

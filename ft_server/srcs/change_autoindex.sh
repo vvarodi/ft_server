@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # check if nginx already started, if yes make changes and reload, 
-# if not (first attempt: during building the container) just copy files
+# if not (first attempt -> during building the container) just copy files
 
 if (( $(ps -ef | grep -v grep | grep nginx | wc -l) > 0 ))
 then

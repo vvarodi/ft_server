@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bash change_index.sh
+bash change_autoindex.sh
 
 service php7.3-fpm start
 #/etc/init.d/php7.3-fpm start

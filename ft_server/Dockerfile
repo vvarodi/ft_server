@@ -6,7 +6,7 @@
 #    By: vvarodi <vvarodi@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/27 22:17:54 by vvarodi           #+#    #+#              #
-#    Updated: 2020/09/05 01:56:14 by vvarodi          ###   ########.fr        #
+#    Updated: 2020/09/06 14:05:43 by vvarodi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,28 +28,28 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # NGINX
-RUN     echo "daemon off;" >> /etc/nginx/nginx.conf
-COPY	srcs/server.conf /tmp/
-COPY    srcs/server_auto_off.conf /tmp/
-#COPY       /srcs/server.conf /etc/nginx/sites-available/server.conf
-#RUN		ln -s /etc/nginx/sites-available/server.conf /etc/nginx/sites-enabled/server.conf
-#RUN		rm -rf /etc/nginx/sites-enabled/default
+RUN     echo "daemon off;" >> /etc/nginx/nginx.conf && \ 
+        rm var/www/html/index.nginx-debian.html
+COPY	srcs/nginx/*.conf /tmp/
+#COPY   /srcs/nginx/server.conf /etc/nginx/sites-available/server.conf
+#RUN    ln -s /etc/nginx/sites-available/server.conf /etc/nginx/sites-enabled/server.conf
+#RUN    rm -rf /etc/nginx/sites-enabled/default
 
 # PHPMYADMIN
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-english.tar.gz && \
     tar -xzvf phpMyAdmin-5.0.2-english.tar.gz && \
     mv phpMyAdmin-5.0.2-english/ /var/www/html/phpmyadmin && \
     rm -rf phpMyAdmin-5.0.2-english.tar.gz
-COPY srcs/config.inc.php /var/www/html/phpmyadmin
+COPY srcs/phpmyadmin/config.inc.php /var/www/html/phpmyadmin
 
 # WordPress
 RUN wget https://wordpress.org/latest.tar.gz && \
     tar -xzvf latest.tar.gz && \
     mv wordpress /var/www/html/ && \
     rm -rf latest.tar.gz
-COPY srcs/wp-config.php /var/www/html/wordpress
+COPY srcs/wordpress/wp-config.php /var/www/html/wordpress
 
-# SLL SETUP
+# SLL
 RUN mkdir ~/mkcert && cd ~/mkcert && \
 	wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.1/mkcert-v1.4.1-linux-amd64 && \
 	mv mkcert-v1.4.1-linux-amd64 mkcert && chmod +x mkcert && \
@@ -58,10 +58,8 @@ RUN mkdir ~/mkcert && cd ~/mkcert && \
 # Giving nginx's user-group rights over page files
 RUN	chown -R www-data:www-data /var/www/html/*
 
-COPY srcs/change_index.sh .
-COPY srcs/start.sh .
-COPY srcs/main.php /var/www/html/
-COPY srcs/index.html /var/www/html/
+# Scripts: start.sh && change_index.sh
+COPY srcs/*.sh ./
 
 # Ports that needs to be exposed at run time with -p [host port]:[container port]
 EXPOSE 80 443

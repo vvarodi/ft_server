@@ -1,0 +1,4 @@
+Dockerfile linguist-detectable=true
+ *.php linguist-detectable=false
+ *.html linguist-detectable=true
+ *.sh linguist-detectable=true

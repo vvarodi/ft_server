@@ -1,22 +1,22 @@
-# ft_server
+# ft_server - @42born2code
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1920px-Docker_%28container_engine%29_logo.svg.png"
      style="text-align:center" width=300px />
 
-## Table of Contents:
 
-1. [What is ft_server](#what-is-ft_server) ❔
-    * [Description for newbies](#description-for-newbies) 💡
-2. [Instructions](#Instructions) 👈
-    * [Installation](#installation) 🔧
-    * [Content](#content) 📦
-    * [Build Docker image](#build-docker-image) 🐳
-    * [Run a container](#run-a-container) 🐳
-    * [Shell acces to the container](#shell-acces-to-the-container) 🐳
-    * [Autoindex on/off](#autoindex-on/off) 📂
-3. [Guide: What I did step by step](#Guide) ✔️
+## Table of Contents:
+1. [What is ft_server](https://github.com/vvarodi/ft_server#what-is-ft_server-) ❔
+    * [Description for newbies](https://github.com/vvarodi/ft_server#description-for-newbies-) 💡
+2. [Instructions](https://github.com/vvarodi/ft_server#instructions-) 👈
+    * [Installation](https://github.com/vvarodi/ft_server#-installation) 🔧
+    * [Content](https://github.com/vvarodi/ft_server#-content) 📦
+    * [Build Docker image](https://github.com/vvarodi/ft_server#-build-docker-image) 🐳
+    * [Run a container](https://github.com/vvarodi/ft_server#-run-a-container) 🐳
+    * [Shell acces to the container](https://github.com/vvarodi/ft_server#-shell-acces-to-the-container) 🐳
+    * [Autoindex on/off](https://github.com/vvarodi/ft_server#-autoindex-onoff) 📂
+3. [Guide: What I did step by step](https://github.com/vvarodi/ft_server#guide-what-i-did-step-by-step) ✔️
     * [Wiki](https://github.com/vvarodi/ft_server/wiki)
-4. [How it looks](#how-it-looks) 💻 
-4. [Resources/Research](#resources/research) 🔍
+4. [How it looks](https://github.com/vvarodi/ft_server#how-it-looks-) 💻 
+4. [Resources / Research](https://github.com/vvarodi/ft_server#resourcesresearch-) 🔍
 
 # What is ft_server ❔
 
@@ -103,7 +103,7 @@ echo $AUTOINDEX
 AUTOINDEX=off
 bash change_autoindex.sh
 ```
-or
+or outside the container
 ```
 sh autoindex_off.sh
 ```

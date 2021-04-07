@@ -11,7 +11,7 @@
     * [Content](https://github.com/vvarodi/ft_server#-content) 📦
     * [Build Docker image](https://github.com/vvarodi/ft_server#-build-docker-image) 🐳
     * [Run a container](https://github.com/vvarodi/ft_server#-run-a-container) 🐳
-    * [Shell acces to the container](https://github.com/vvarodi/ft_server#-shell-acces-to-the-container) 🐳
+    * [Shell access to the container](https://github.com/vvarodi/ft_server#-shell-acces-to-the-container) 🐳
     * [Autoindex on/off](https://github.com/vvarodi/ft_server#-autoindex-onoff) 📂
 3. [Guide: What I did step by step](https://github.com/vvarodi/ft_server#guide-what-i-did-step-by-step) ✔️
     * [Wiki](https://github.com/vvarodi/ft_server/wiki)
@@ -86,7 +86,7 @@ docker build -t ft_server .
 ```
 docker run --name ft_server -d -p 443:443 -p 80:80 ft_server
 ```
-### 🐚 Shell acces to the container
+### 🐚 Shell access to the container
 ```
 docker exec -it ft_server bash
 ```
@@ -157,7 +157,7 @@ sh autoindex_off.sh
   * [MariaDB vs MySQL](https://www.guru99.com/mariadb-vs-mysql.html)
 * **PHP**
   * [PHP Manual](https://www.php.net/manual/es/index.php)
-* **phpMyAdmin** phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web.
+* **phpMyAdmin:** phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web.
   * [phpMyAdmin Documentation](https://docs.phpmyadmin.net/en/latest/)
   * [phpMyAdmin Configuration](https://docs.phpmyadmin.net/en/latest/config.html#)
   * [config.inc.php](https://docs.phpmyadmin.net/en/latest/config.html#config-examples)
